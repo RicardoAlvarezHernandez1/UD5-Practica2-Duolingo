@@ -20,28 +20,31 @@ public class App {
             System.out.println("6. Cerrar programa");
             
             int opcion = teclado.nextInt();
+            teclado.nextLine();
 
             switch (opcion) {
                 case 1:
                     System.out.println("Introduzca la palabra que quiere añadir :");
-                    String palabraQueAnnadir = teclado.next();
+                    String palabraQueAnnadir = teclado.nextLine();
                     diccionario.annadirPalabra(palabraQueAnnadir);
                     break;
                 case 2:
                     System.out.println("Introduzca la palabra que quiere borrar :");
-                    String palabraBorrar = teclado.next();
+                    String palabraBorrar = teclado.nextLine();
                     diccionario.eliminarPalabra(palabraBorrar);
                     break;
                 case 3:
                     System.out.println("Introduzca la palabra que quiere buscar :");
-                    String palabraQueBuscar = teclado.next();
+                    String palabraQueBuscar = teclado.nextLine();
                     diccionario.existePalabra(palabraQueBuscar);
                     break;
                 case 4:
-                    
+                    diccionario.mostrarIniciales();
                     break;
                 case 5:
-                    
+                    System.out.println("Introduzca una letra , para ver que palabras tiene almacenadas.");
+                    String letra = teclado.nextLine();
+                    diccionario.mostrarPalabrasPorInicial(letra);
                     break;
                 case 6:
                     salida = true;
