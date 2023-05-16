@@ -1,5 +1,4 @@
 package net.salesianos.duolingo.almacendepalabras;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -29,6 +28,7 @@ public class Diccionario {
         palabra = palabra.toLowerCase().trim();
         if( diccionario.containsKey(inicial)){
             Set<String> palabras1 = diccionario.get(inicial);
+            System.out.println("Se ha borrado la palabra.");
             palabras1.remove(palabra);
             if (palabras1.size() == 0) {
                 diccionario.remove(inicial);
@@ -53,10 +53,20 @@ public class Diccionario {
             System.out.println("La palabra no esta almacenada");
         }
     }
-    
 
-   
-    
-    
+    public void mostrarIniciales(){
+        System.out.println("Estas son las iniciales que tienen alguna palabra almacenada  >:) : ");
+        System.out.println(diccionario.keySet()); 
+
+    }
+
+    public void mostrarPalabrasPorInicial(String letra){
+        if (letra.length() == 1) {
+            System.out.println("La lista de palabras que empiezan por " + letra + " son : ");
+            System.out.println(diccionario.get(letra));
+        } else {
+            System.out.println("Tienes que introducir una sola letra ¯|_(ツ)_|¯ )");
+        }
+    }
 }
 
